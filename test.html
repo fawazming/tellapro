@@ -114,12 +114,13 @@
         <h1>Google Scholar Content Extractor</h1>
         <div class="instructions">
             <p>This script will fetch content from Google Scholar and extract the element with ID <code>gsc_rsb_cit</code> (typically containing citation metrics) to display below.</p>
-            <p class="scholar-notice">Note: Due to CORS restrictions, this may not work directly from a local file. You might need to:</p>
+            <p class="scholar-notice"><strong>Important limitation:</strong> This demo cannot directly fetch from Google Scholar due to CORS restrictions. To make it work, you must:</p>
             <ul class="scholar-notice">
-                <li>Run it through a local server</li>
-                <li>Use a browser extension to enable CORS</li>
-                <li>Implement a proxy server solution</li>
+                <li><strong>Option 1:</strong> Set up a CORS proxy server (see code comments)</li>
+                <li><strong>Option 2:</strong> Use a browser extension like "Allow CORS" if testing locally</li>
+                <li><strong>Option 3:</strong> Manually copy the HTML response for testing</li>
             </ul>
+            <p class="scholar-notice">Alternatively, you can run this directly from a server that has proper CORS headers configured.</p>
         </div>
         
         <button id="fetchButton">Fetch Google Scholar Data</button>
@@ -141,12 +142,18 @@
                 statusDiv.className = '';
                 
                 try {
-                    // You'll need to replace "YOUR_GOOGLE_SCHOLAR_PROFILE_URL" with the actual URL
+                    // For production use, you would need a CORS proxy solution like:
+                    // const proxyUrl = 'https://api.cors.lol/?url=';
+                    // const scholarUrl = `${proxyUrl}https://scholar.google.com/citations?user=VNYbr6cAAAAJ`;
+                    
+                    // For demo purposes (will throw CORS error):
                     const scholarUrl = 'https://scholar.google.com/citations?user=VNYbr6cAAAAJ';
                     
-                    // Note: Due to CORS, this will fail if run directly from a file:// URL
-                    // In a real implementation, you'd need a proxy server or CORS solution
-                    const response = await fetch(scholarUrl);
+                    // Note: In a real implementation, you'd need proper CORS handling
+                    // Remove 'mode: 'no-cors'' if using a proper proxy
+                    const response = await fetch(scholarUrl, {
+                        mode: 'no-cors' // This won't fix CORS but lets you inspect the error
+                    });
                     
                     if (!response.ok) {
                         throw new Error(`HTTP error! status: ${response.status}`);
@@ -171,8 +178,15 @@
                 } catch (error) {
                     console.error('Error:', error);
                     statusDiv.innerHTML = `<span class="error">Error: ${error.message}</span>`;
-                    if (error.message.includes('CORS')) {
-                        statusDiv.innerHTML += '<p class="error">This is likely due to CORS restrictions. See the note above for potential solutions.</p>';
+                    if (error.message.includes('CORS') || error.message.includes('Failed to fetch')) {
+                        statusDiv.innerHTML += `
+                            <p class="error">
+                                <strong>CORS Blocked:</strong> This is expected behavior since Google Scholar blocks direct API access.<br>
+                                You must set up a proxy server to make this work in production.
+                            </p>
+                            <p class="error">
+                                For testing, try the Chrome extension "Allow CORS: Access-Control-Allow-Origin".
+                            </p>`;
                     }
                 } finally {
                     fetchButton.disabled = false;
