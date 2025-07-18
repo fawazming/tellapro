@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,7 +15,7 @@
             padding: 20px;
             background-color: #f9f9f9;
         }
-        
+
         .container {
             background: white;
             border-radius: 8px;
@@ -22,13 +23,13 @@
             padding: 30px;
             margin-bottom: 20px;
         }
-        
+
         h1 {
             color: #1a0dab;
             margin-bottom: 20px;
             font-weight: 500;
         }
-        
+
         .instructions {
             background-color: #f8f9fa;
             border-left: 4px solid #1a0dab;
@@ -36,7 +37,7 @@
             margin: 20px 0;
             font-size: 0.95em;
         }
-        
+
         button {
             background-color: #1a0dab;
             color: white;
@@ -48,22 +49,22 @@
             transition: background-color 0.3s;
             margin: 10px 0;
         }
-        
+
         button:hover {
             background-color: #1557b0;
         }
-        
+
         button:disabled {
             background-color: #cccccc;
             cursor: not-allowed;
         }
-        
+
         #status {
             margin: 15px 0;
             padding: 10px;
             border-radius: 4px;
         }
-        
+
         .loading {
             border: 3px solid #f3f3f3;
             border-top: 3px solid #1a0dab;
@@ -74,12 +75,17 @@
             display: inline-block;
             margin-right: 10px;
         }
-        
+
         @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
         }
-        
+
         #googleScholar {
             margin-top: 20px;
             border: 1px solid #e0e0e0;
@@ -87,21 +93,21 @@
             padding: 20px;
             min-height: 100px;
         }
-        
+
         .error {
             color: #d32f2f;
             background-color: #fde8e8;
             padding: 10px;
             border-radius: 4px;
         }
-        
+
         .success {
             color: #388e3c;
             background-color: #e8f5e9;
             padding: 10px;
             border-radius: 4px;
         }
-        
+
         .scholar-notice {
             font-size: 0.9em;
             color: #666;
@@ -109,20 +115,24 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <h1>Google Scholar Content Extractor</h1>
         <div class="instructions">
-            <p>This script will fetch content from Google Scholar and extract the element with ID <code>gsc_rsb_cit</code> (typically containing citation metrics) to display below.</p>
-            <p class="scholar-notice"><strong>Important limitation:</strong> This demo cannot directly fetch from Google Scholar due to CORS restrictions. To make it work, you must:</p>
+            <p>This script will fetch content from Google Scholar and extract the element with ID
+                <code>gsc_rsb_cit</code> (typically containing citation metrics) to display below.</p>
+            <p class="scholar-notice"><strong>Proxy Solution:</strong> This demo includes a PHP proxy to fetch Google
+                Scholar content. To use it:</p>
             <ul class="scholar-notice">
-                <li><strong>Option 1:</strong> Set up a CORS proxy server (see code comments)</li>
-                <li><strong>Option 2:</strong> Use a browser extension like "Allow CORS" if testing locally</li>
-                <li><strong>Option 3:</strong> Manually copy the HTML response for testing</li>
+                <li>Host this page on a PHP-enabled web server</li>
+                <li>The proxy will automatically force English language (hl=en)</li>
+                <li>Add ?hl=en parameter if you need different language</li>
             </ul>
-            <p class="scholar-notice">Alternatively, you can run this directly from a server that has proper CORS headers configured.</p>
+            <p class="scholar-notice">Note: The proxy is rate limited by Google Scholar and may block requests if
+                overused.</p>
         </div>
-        
+
         <button id="fetchButton">Fetch Google Scholar Data</button>
         <div id="status"></div>
         <div id="googleScholar">
@@ -131,68 +141,64 @@
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const fetchButton = document.getElementById('fetchButton');
             const statusDiv = document.getElementById('status');
             const targetDiv = document.getElementById('googleScholar');
-            
-            fetchButton.addEventListener('click', async function() {
+
+            fetchButton.addEventListener('click', async function () {
                 fetchButton.disabled = true;
                 statusDiv.innerHTML = '<span class="loading"></span> Fetching data from Google Scholar...';
                 statusDiv.className = '';
-                
+
                 try {
-                    // For production use, you would need a CORS proxy solution like:
-                    // const proxyUrl = 'https://api.cors.lol/?url=';
-                    // const scholarUrl = `${proxyUrl}https://scholar.google.com/citations?user=VNYbr6cAAAAJ`;
-                    
-                    // For demo purposes (will throw CORS error):
-                    const scholarUrl = 'https://scholar.google.com/citations?user=VNYbr6cAAAAJ';
-                    
-                    // Note: In a real implementation, you'd need proper CORS handling
-                    // Remove 'mode: 'no-cors'' if using a proper proxy
-                    const response = await fetch(scholarUrl, {
-                        mode: 'no-cors' // This won't fix CORS but lets you inspect the error
-                    });
-                    
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                    
-                    const html = await response.text();
-                    
-                    // Create a DOM parser to extract the content
-                    const parser = new DOMParser();
-                    const doc = parser.parseFromString(html, 'text/html');
-                    
-                    // Find the citation metrics div in the fetched content
-                    const citationDiv = doc.getElementById('gsc_rsb_cit');
-                    
-                    if (citationDiv) {
-                        targetDiv.innerHTML = '';
-                        targetDiv.appendChild(citationDiv.cloneNode(true));
-                        statusDiv.innerHTML = '<span class="success">Successfully fetched and displayed Google Scholar citation metrics.</span>';
-                    } else {
-                        throw new Error('Could not find citation metrics div (#gsc_rsb_cit) on the page');
-                    }
-                } catch (error) {
-                    console.error('Error:', error);
-                    statusDiv.innerHTML = `<span class="error">Error: ${error.message}</span>`;
-                    if (error.message.includes('CORS') || error.message.includes('Failed to fetch')) {
-                        statusDiv.innerHTML += `
+                    // Using PHP proxy that forces English language
+                    const proxyUrl = 'https://aaiscbt.alwaysdata.net/proxy.php?url=';
+                    const scholarUrl = `${proxyUrl}https://scholar.google.com/citations?user=VNYbr6cAAAAJ&hl=en`;
+
+                    const response = await fetch(scholarUrl);
+                
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const html = await response.text();
+
+            // Create a DOM parser to extract the content
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+
+            // Find the citation metrics div in the fetched content
+            const citationDiv = doc.getElementById('gsc_rsb_cit');
+
+            if (citationDiv) {
+                targetDiv.innerHTML = '';
+                targetDiv.appendChild(citationDiv.cloneNode(true));
+                statusDiv.innerHTML = '<span class="success">Successfully fetched and displayed Google Scholar citation metrics.</span>';
+            } else {
+                throw new Error('Could not find citation metrics div (#gsc_rsb_cit) on the page');
+            }
+        
+        } catch (error) {
+            console.error('Error:', error);
+            statusDiv.innerHTML = `<span class="error">Error: ${error.message}</span>`;
+            if (error.message.includes('CORS') || error.message.includes('Failed to fetch')) {
+                statusDiv.innerHTML += `
                             <p class="error">
-                                <strong>CORS Blocked:</strong> This is expected behavior since Google Scholar blocks direct API access.<br>
-                                You must set up a proxy server to make this work in production.
+                                <strong>Fetch Error:</strong> Failed to load Google Scholar data.<br>
+                                Check that the PHP proxy is working and hosted on a server.
                             </p>
                             <p class="error">
-                                For testing, try the Chrome extension "Allow CORS: Access-Control-Allow-Origin".
+                                Ensure you're accessing this page through a web server (not file://).
                             </p>`;
-                    }
-                } finally {
-                    fetchButton.disabled = false;
-                }
+            }
+        } finally {
+            fetchButton.disabled = false;
+        }
             });
         });
     </script>
 </body>
+
 </html>
