@@ -2,6 +2,8 @@
 // Universal Layout Application Script
 document.addEventListener('DOMContentLoaded', function () {
     // Show loader while applying layout
+    // Fetch blogs on page load
+    fetchBlogs();
     const loader = document.getElementById('loader');
     loader.style.display = 'flex';
 
@@ -32,22 +34,22 @@ document.addEventListener('DOMContentLoaded', function () {
                             <nav class="site-main-menu">
                                 <ul>
                                     <li class=" position-static">
-                                        <a href="#"><span class="menu-text">Home</span></a>
+                                        <a href="index.html"><span class="menu-text">Home</span></a>
                                     </li>
                                     <li class=" position-static">
-                                        <a href="#"><span class="menu-text">About Me</span></a>
+                                        <a href="biography.html"><span class="menu-text">About Me</span></a>
                                     </li>
                                     <li class=" position-static">
-                                        <a href="#"><span class="menu-text">Publications</span></a>
+                                        <a href="research.html"><span class="menu-text">Publications</span></a>
                                     </li>
-                                    <li class=" position-static">
+                                    <!-- <li class=" position-static">
                                         <a href="#"><span class="menu-text">Services</span></a>
+                                    </li> -->
+                                    <li class=" position-static">
+                                        <a href="index.html#blog"><span class="menu-text">Blog</span></a>
                                     </li>
                                     <li class=" position-static">
-                                        <a href="#"><span class="menu-text">Blog</span></a>
-                                    </li>
-                                    <li class=" position-static">
-                                        <a href="#"><span class="menu-text">Contact</span></a>
+                                        <a href="#contact"><span class="menu-text">Contact</span></a>
                                     </li>
                                 </ul>
                             </nav>
@@ -83,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Create footer template
     const footerTemplate = `
                
-        <div class="footer-section section">
+        <div class="footer-section section" id="contact">
             <div class="container">
 
                 <!-- Footer Top Widgets Start -->
@@ -119,12 +121,9 @@ document.addEventListener('DOMContentLoaded', function () {
                             <h4 class="footer-widget-title">Explore</h4>
                             <div class="footer-widget-content">
                                 <ul class="column-2">
-                                    <li><a href="#">Start here</a></li>
-                                    <li><a href="#">Success story</a></li>
-                                    <li><a href="#">Blog</a></li>
-                                    <li><a href="#">Courses</a></li>
-                                    <li><a href="#">About us</a></li>
-                                    <li><a href="#">Contact us</a></li>
+                                    <!-- <li><a href="#"><img src="https://cdn.prod.website-files.com/60252f4fc7403c719ecadc82/60252f4fc7403c481fcade21_ResearchGate_newgreen.svg" alt="ResearchGate"></a></li> -->
+                                    <li><a href="https://youtube.com/@geo-asquare?si=UTsFvpfSalCMGBOa">Youtube Channel</a></li>
+                                    <li><a href="index.html#blog">Blog</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -137,10 +136,10 @@ document.addEventListener('DOMContentLoaded', function () {
                             <h4 class="footer-widget-title">Information</h4>
                             <div class="footer-widget-content">
                                 <ul>
-                                    <li><a href="#">Membership</a></li>
-                                    <li><a href="#">Purchase guide</a></li>
-                                    <li><a href="#">Privacy policy</a></li>
-                                    <li><a href="#">Terms of service</a></li>
+                                    <li><a href="https://orcid.org/0000-0002-4380-3343" target="_blank"><img src="https://orcid.wpengine.com/wp-content/uploads/2020/07/Asset-3.png" alt="ORCID"></a></li>
+                                    <li><a href="https://scholar.google.com/citations?user=VNYbr6cAAAAJ&hl=en&inst=18167123410944994753" target="_blank"><img src="https://scholar.google.com/intl/en/scholar/images/2x/scholar_logo_24dp.png" alt="Google Scholar"></a></li>
+                                    <li><a href="https://www.researchgate.net/profile/Abdulwaheed-Tella" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/ResearchGate_Logo.png" width="300px" alt="ResearchGate"></a></li>
+                                    
                                 </ul>
                             </div>
                         </div>
@@ -148,15 +147,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     <!-- Footer Widget End -->
 
                 </div>
-                <!-- Footer Top Widgets End -->
-
-                <!-- Footer Copyright Start 
-                <div class="row max-mt-20">
-                    <div class="col">
-                        <p class="copyright">� 2023 Maxcoach. <a href="https://hasthemes.com/">All Rights Reserved</a>
-                        </p>
-                    </div>
-                </div> Footer Copyright End -->
 
             </div>
         </div>
@@ -186,22 +176,22 @@ document.addEventListener('DOMContentLoaded', function () {
                 <nav class="site-mobile-menu">
                     <ul>
                         <li class=" position-static">
-                            <a href="#"><span class="menu-text">Home</span></a>
+                            <a href="index.html"><span class="menu-text">Home</span></a>
                         </li>
                         <li class=" position-static">
-                            <a href="#"><span class="menu-text">About Me</span></a>
+                            <a href="biography.html"><span class="menu-text">About Me</span></a>
                         </li>
                         <li class=" position-static">
-                            <a href="#"><span class="menu-text">Publications</span></a>
+                            <a href="research.html"><span class="menu-text">Publications</span></a>
                         </li>
-                        <li class=" position-static">
+                        <!-- <li class=" position-static">
                             <a href="#"><span class="menu-text">Services</span></a>
+                        </li> -->
+                        <li class=" position-static">
+                            <a href="index.html#blog"><span class="menu-text">Blog</span></a>
                         </li>
                         <li class=" position-static">
-                            <a href="#"><span class="menu-text">Blog</span></a>
-                        </li>
-                        <li class=" position-static">
-                            <a href="#"><span class="menu-text">Contact</span></a>
+                            <a href="#contact"><span class="menu-text">Contact</span></a>
                         </li>
                     </ul>
                 </nav>
@@ -240,6 +230,35 @@ document.addEventListener('DOMContentLoaded', function () {
             $this.siblings('.sub-menu, .mega-menu').slideDown().parent().addClass('open').siblings().find('.sub-menu, .mega-menu').slideUp().parent().removeClass('open');
         }
     });
+
+    // Service Slider
+    var serviceSlider = new Swiper('.service-slider', {
+        watchSlidesVisibility: true,
+        loop: true,
+        spaceBetween: 30,
+        slidesPerView: 3,
+        slidesPerGroup: 1,
+        autoHeight: true,
+        pagination: {
+            el: '.swiper-pagination',
+            type: 'bullets',
+            clickable: true,
+          },
+        breakpoints: {
+            320: {
+                slidesPerView: 1
+            },
+            768: {
+                slidesPerView: 2
+            },
+            992: {
+                slidesPerView: 2
+            },
+            1200: {
+                slidesPerView: 3
+            }
+        }
+    })
 });
 
 // Make this script exportable for inclusion in other pages

@@ -586,34 +586,34 @@
         }
     })
 
-    // Service Slider
-    var serviceSlider = new Swiper('.service-slider', {
-        watchSlidesVisibility: true,
-        loop: true,
-        spaceBetween: 30,
-        slidesPerView: 3,
-        slidesPerGroup: 1,
-        autoHeight: true,
-        pagination: {
-            el: '.swiper-pagination',
-            type: 'bullets',
-            clickable: true,
-          },
-        breakpoints: {
-            320: {
-                slidesPerView: 1
-            },
-            768: {
-                slidesPerView: 2
-            },
-            992: {
-                slidesPerView: 2
-            },
-            1200: {
-                slidesPerView: 3
-            }
-        }
-    })
+    // // Service Slider
+    // var serviceSlider = new Swiper('.service-slider', {
+    //     watchSlidesVisibility: true,
+    //     loop: true,
+    //     spaceBetween: 30,
+    //     slidesPerView: 3,
+    //     slidesPerGroup: 1,
+    //     autoHeight: true,
+    //     pagination: {
+    //         el: '.swiper-pagination',
+    //         type: 'bullets',
+    //         clickable: true,
+    //       },
+    //     breakpoints: {
+    //         320: {
+    //             slidesPerView: 1
+    //         },
+    //         768: {
+    //             slidesPerView: 2
+    //         },
+    //         992: {
+    //             slidesPerView: 2
+    //         },
+    //         1200: {
+    //             slidesPerView: 3
+    //         }
+    //     }
+    // })
 
     // Cooking About Slider
     var cookingSlider = new Swiper('.cooking-about-slider', {

@@ -30,6 +30,46 @@
 
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .blogs {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .swiper-slide {
+            width: 300px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .image img {
+            width: 100%;
+            height: auto;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+        }
+        .modal-content {
+            background: white;
+            padding: 20px;
+            max-width: 600px;
+            width: 90%;
+            overflow-y: auto;
+            max-height: 80%;
+        }
+        .close {
+            cursor: pointer;
+            float: right;
+        }
+    </style>
     <script src="./assets/js/layout.js"></script>
 </head>
 
@@ -248,94 +288,18 @@
         <!-- Feature Section End -->
 
         <!-- Service Section Start -->
-        <div class="service-section section section-padding" data-bg-color="#f8f8f8">
+        <div class="service-section section section-padding" data-bg-color="#f8f8f8" id="blog">
             <div class="container">
                 <!-- Section Title Start -->
                 <div class="section-title-two text-center" data-aos="fade-up">
-                    <span class="sub-title">Let’s Dream Big Together</span>
-                    <h2 class="title fz-48">Explore How can I help you</h2>
+                    <span class="sub-title">Blogs</span>
+                    <h2 class="title fz-48">Learn more by reading</h2>
                 </div>
                 <!-- Section Title End -->
 
                 <div class="service-slider swiper-container" data-aos="fade-up">
 
-                    <div class="swiper-wrapper">
-
-                        <div class="swiper-slide">
-                            <!-- Single Service Start -->
-                            <a href="event.html" class="service">
-                                <div class="image">
-                                    <img src="assets/images/service/business-service-1.jpg" alt="">
-                                </div>
-                                <div class="content">
-                                    <h3 class="title">Consultative Training</h3>
-                                    <p>With a coach addressing multiple issues that are off balance, affecting your
-                                        business in various unconsidered ways.</p>
-
-                                    <div class="button-wrap">
-                                        <span class="link">Discover now <i class="fas fa-arrow-right"></i></span>
-                                    </div>
-                                </div>
-                            </a>
-                            <!-- Single Service End -->
-                        </div>
-
-                        <div class="swiper-slide">
-                            <!-- Single Service Start -->
-                            <a href="event.html" class="service">
-                                <div class="image">
-                                    <img src="assets/images/service/business-service-2.jpg" alt="">
-                                </div>
-                                <div class="content">
-                                    <h3 class="title">Real Deal Coaching</h3>
-                                    <p>Brings an exceptionally powerful opportunity. Being able to accept, to work with
-                                        that opportunity.</p>
-
-                                    <div class="button-wrap">
-                                        <span class="link">Discover now <i class="fas fa-arrow-right"></i></span>
-                                    </div>
-                                </div>
-                            </a>
-                            <!-- Single Service End -->
-                        </div>
-
-                        <div class="swiper-slide">
-                            <!-- Single Service Start -->
-                            <a href="event.html" class="service">
-                                <div class="image">
-                                    <img src="assets/images/service/business-service-3.jpg" alt="">
-                                </div>
-                                <div class="content">
-                                    <h3 class="title">Advisor Training Program</h3>
-                                    <p>Getting high quality, entrepreneur mindset driven online business coaching, is
-                                        what is needed.</p>
-
-                                    <div class="button-wrap">
-                                        <span class="link">Discover now <i class="fas fa-arrow-right"></i></span>
-                                    </div>
-                                </div>
-                            </a>
-                            <!-- Single Service End -->
-                        </div>
-
-                        <div class="swiper-slide">
-                            <!-- Single Service Start -->
-                            <a href="event.html" class="service">
-                                <div class="image">
-                                    <img src="assets/images/service/business-service-2.jpg" alt="">
-                                </div>
-                                <div class="content">
-                                    <h3 class="title">Real Deal Coaching</h3>
-                                    <p>Brings an exceptionally powerful opportunity. Being able to accept, to work with
-                                        that opportunity.</p>
-
-                                    <div class="button-wrap">
-                                        <span class="link">Discover now <i class="fas fa-arrow-right"></i></span>
-                                    </div>
-                                </div>
-                            </a>
-                            <!-- Single Service End -->
-                        </div>
+                    <div class="swiper-wrapper" id="blogs">
 
                     </div>
 
@@ -351,6 +315,16 @@
     <!-- Loader element -->
     <div id="loader" class="loader-container">
         <div class="mini-loader"></div>
+    </div>
+
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="close" id="close">&times;</span>
+            <h3 id="modal-title"></h3>
+            <img id="modal-image" src="" alt="" style="width: 100%; height: auto;">
+            <p id="modal-content"></p>
+            <button id="read-aloud">Read Aloud</button>
+        </div>
     </div>
 
     <!-- JS
@@ -391,6 +365,7 @@
 
     <!-- Main Activation JS -->
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/blog.js"></script>
 
 
 
