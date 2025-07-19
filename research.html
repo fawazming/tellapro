@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Abdulwaheed Tella - Researcher | Data Scientist | GeoAI Enthusiast</title>
+    <title>Abdulwaheed Tella Research -GEO AI Researcher | Data Scientist | GeoAI Enthusiast </title>
     <meta name="robots" content="noindex, follow">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -31,13 +31,6 @@
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
     <script src="./assets/js/layout.js"></script>
-
-
-    <!-- Use the minified version files listed below for better performance and remove the files listed above -->
-    <!-- <link rel="stylesheet" href="assets/css/vendor/vendor.min.css">
-    <link rel="stylesheet" href="assets/css/plugins/plugins.min.css">
-    <link rel="stylesheet" href="assets/css/style.min.css"> -->
-
 </head>
 
 <body>
@@ -230,54 +223,52 @@
         fetchPostContent(apiKey, blogId, '3625544780777822262', 'bok'); // Post 2
         fetchPostContent(apiKey, blogId, '2086606272549556382', 'conf'); // Post 3
         const statusDiv = document.getElementById('statuss');
-const targetDiv = document.getElementById('googleScholar');
 
-document.addEventListener('DOMContentLoaded', function () {
-    console.log('Loaded DOM');
-    loadStats();
-});
+        document.addEventListener('DOMContentLoaded', function () {
+            console.log('Loaded DOM');
+            loadStats();
 
-function loadStats() {
-    console.log('Google Scholar about to start DOM');
-    statusDiv.innerHTML = '<span class="loading"></span> Fetching data from Google Scholar...';
-    statusDiv.className = '';
-
-    // Using PHP proxy that forces English language
-    const proxyUrl = 'https://aaiscbt.alwaysdata.net/proxy.php?url=';
-    const scholarUrl = `${proxyUrl}https://scholar.google.com/citations?user=VNYbr6cAAAAJ&hl=en`;
-
-    fetch(scholarUrl)
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return response.text();
-        })
-        .then(html => {
-            // Create a DOM parser to extract the content
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(html, 'text/html');
-
-            // Find the citation metrics div in the fetched content
-            const citationDiv = doc.getElementById('gsc_rsb_cit');
-
-            if (citationDiv) {
-                targetDiv.innerHTML = '';
-                targetDiv.appendChild(citationDiv.cloneNode(true));
-            } else {
-                throw new Error('Could not find citation metrics div (#gsc_rsb_cit) on the page');
-            }
-        })
-        .catch(error => {
-            console.error('Error:', error);
-        })
-        .finally(() => {
-            // Any cleanup or final actions can be done here
-            // fetchButton.disabled = false; // Uncomment if you have a fetch button
         });
 
-    console.log('Google Scholar Done DOM');
-}
+        function loadStats() {
+        const targetDiv = document.getElementById('googleScholar');
+            statusDiv.innerHTML = '<span class="loading"></span> Fetching data from Google Scholar...';
+            statusDiv.className = '';
+
+            // Using PHP proxy that forces English language
+            const proxyUrl = 'https://aaiscbt.alwaysdata.net/proxy.php?url=';
+            const scholarUrl = `${proxyUrl}https://scholar.google.com/citations?user=VNYbr6cAAAAJ&hl=en`;
+
+            fetch(scholarUrl)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.text();
+                })
+                .then(html => {
+                    // Create a DOM parser to extract the content
+                    const parser = new DOMParser();
+                    const doc = parser.parseFromString(html, 'text/html');
+
+                    // Find the citation metrics div in the fetched content
+                    const citationDiv = doc.getElementById('gsc_rsb_cit');
+
+                    if (citationDiv) {
+                        targetDiv.innerHTML = '';
+                        targetDiv.appendChild(citationDiv.cloneNode(true));
+                    } else {
+                        throw new Error('Could not find citation metrics div (#gsc_rsb_cit) on the page');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                })
+                .finally(() => {
+                    // Any cleanup or final actions can be done here
+                    // fetchButton.disabled = false; // Uncomment if you have a fetch button
+                });
+        }
 
 
     </script>

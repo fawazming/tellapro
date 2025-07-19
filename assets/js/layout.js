@@ -223,6 +223,23 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 300);
     }, 500);
 
+    
+    /*--
+        Off Canvas Function
+    -----------------------------------*/
+    var $body = $('body');
+    $('.header-mobile-menu-toggle, .mobile-menu-close').on('click', '.toggle', function () {
+        $body.toggleClass('mobile-menu-open');
+    });
+    $('.site-mobile-menu').on('click', '.menu-toggle', function (e) {
+        e.preventDefault();
+        var $this = $(this);
+        if ($this.siblings('.sub-menu:visible, .mega-menu:visible').length) {
+            $this.siblings('.sub-menu, .mega-menu').slideUp().parent().removeClass('open').find('.sub-menu, .mega-menu').slideUp().parent().removeClass('open');
+        } else {
+            $this.siblings('.sub-menu, .mega-menu').slideDown().parent().addClass('open').siblings().find('.sub-menu, .mega-menu').slideUp().parent().removeClass('open');
+        }
+    });
 });
 
 // Make this script exportable for inclusion in other pages
