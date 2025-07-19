@@ -30,6 +30,8 @@
 
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <script src="./assets/js/layout.js"></script>
+
 
     <!-- Use the minified version files listed below for better performance and remove the files listed above -->
     <!-- <link rel="stylesheet" href="assets/css/vendor/vendor.min.css">
@@ -40,78 +42,7 @@
 
 <body>
 
-    <div id="page">
-        <!-- Header Section Start -->
-        <div class="header-section header-fluid sticky-header section">
-            <div class="header-inner">
-                <div class="container position-relative">
-                    <div class="row justify-content-between align-items-center">
-
-                        <!-- Header Logo Start -->
-                        <div class="col-xl-3 col-auto">
-                            <div class="header-logo">
-                                <a href="index.html">
-                                    <img class="dark-logo" src="https://abdulwaheedtella.com/images/logo-dark.png"
-                                        alt="Learts Logo">
-                                    <img class="light-logo" src="https://abdulwaheedtella.com/images/logo-light.png"
-                                        alt="Learts Logo">
-                                </a>
-                            </div>
-                        </div>
-                        <!-- Header Logo End -->
-
-                        <!-- Header Main Menu Start -->
-                        <div class="col d-none d-xl-block position-static">
-                            <nav class="site-main-menu">
-                                <ul>
-                                    <li class=" position-static">
-                                        <a href="#"><span class="menu-text">Home</span></a>
-                                    </li>
-                                    <li class=" position-static">
-                                        <a href="#"><span class="menu-text">About Me</span></a>
-                                    </li>
-                                    <li class=" position-static">
-                                        <a href="#"><span class="menu-text">Publications</span></a>
-                                    </li>
-                                    <li class=" position-static">
-                                        <a href="#"><span class="menu-text">Services</span></a>
-                                    </li>
-                                    <li class=" position-static">
-                                        <a href="#"><span class="menu-text">Blog</span></a>
-                                    </li>
-                                    <li class=" position-static">
-                                        <a href="#"><span class="menu-text">Contact</span></a>
-                                    </li>
-                                </ul>
-                            </nav>
-                        </div>
-                        <!-- Header Main Menu End -->
-
-                        <!-- Header Right Start -->
-                        <div class="col-xl-3 col-auto">
-                            <div class="header-right">
-                                <div class="inner">
-
-                                    <!-- Header Mobile Menu Toggle Start -->
-                                    <div class="header-mobile-menu-toggle d-xl-none ml-sm-2">
-                                        <button class="toggle">
-                                            <i class="icon-top"></i>
-                                            <i class="icon-middle"></i>
-                                            <i class="icon-bottom"></i>
-                                        </button>
-                                    </div>
-                                    <!-- Header Mobile Menu Toggle End -->
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Header Right End -->
-
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Header Section End -->
-
+    <div id="content-container">
 
         <!-- Page Title Section Start -->
         <div class="page-title-section section">
@@ -139,27 +70,31 @@
                         <div class="course-rating">
                             <h3 class="title">Google Stats</h3>
                             <style>
-                                .courser-rating{
+                                .courser-rating {
                                     width: 100%;
                                 }
-                                .courser-rating .title{
+
+                                .courser-rating .title {
                                     text-align: center;
                                 }
+
                                 #gsc_rsb_st {
                                     width: 100%;
                                 }
+
                                 table {
                                     border-collapse: collapse;
                                     border-width: 0;
                                     empty-cells: show;
                                 }
-                                #googleScholar{
+
+                                #googleScholar {
                                     min-width: 80%;
                                 }
                             </style>
                             <div id="statuss" style="display: none;"></div>
                             <div class="course-rating-contt" id="googleScholar">
-    
+
                             </div>
                         </div>
                     </div>
@@ -168,260 +103,36 @@
                         <div class="course-details-wrapper">
                             <div class="course-nav-tab">
                                 <ul class="nav justify-content-center">
-                                    <li><a class="active" data-bs-toggle="tab" href="#research">Research</a></li>
+                                    <li><a class="active" data-bs-toggle="tab" href="#research">Publications by Research
+                                            Theme</a></li>
                                     <li><a data-bs-toggle="tab" href="#book">Book Chapters</a></li>
-                                    <li><a data-bs-toggle="tab" href="#papers">Papers & Presentations</a></li>
+                                    <li><a data-bs-toggle="tab" href="#papers">Conference & Presentations</a></li>
                                 </ul>
                             </div>
                             <div class="tab-content">
                                 <div id="research" class="tab-pane fade show active">
                                     <div class="course-reviews">
                                         <div class="course-reviews-area">
-                                            <ul class="course-reviews-list">
-                                                <li class="review">
-                                                    <div class="review-container">
-                                                        <div class="review-content">
-                                                            <h4 class="title">Tella, A. et al.</h4>
-                                                            <div class="review-stars-rated" title="5 out of 5 stars">
-                                                                <div class="review-stars filled"></div>
-                                                            </div>
-                                                            <h5 class="review-title">Data-driven landfill suitability mapping in Lagos State</h5>
-                                                            <div class="review-text">
-                                                                This research presents a GIS-based multi-criteria decision-making approach for landfill zonation in Lagos State, addressing urbanization challenges.
-                                                                <a href="https://doi.org/10.1007/s13762-024-05803-5">Read more</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                
-                                                <li class="review">
-                                                    <div class="review-container">
-                                                        <div class="review-content">
-                                                            <h4 class="title">Yamusa, I.B.; Ismail, M.S.; Tella, A.</h4>
-                                                            <div class="review-stars-rated" title="4 out of 5 stars">
-                                                                <div class="review-stars filled"></div>
-                                                            </div>
-                                                            <h5 class="review-title">Highway Proneness Appraisal to Landslides</h5>
-                                                            <div class="review-text">
-                                                                This study utilizes MCDM and GIS techniques to assess landslide risks along highways in Malaysia.
-                                                                <a href="https://doi.org/10.3390/su14159096">Read more</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                
-                                                <li class="review">
-                                                    <div class="review-container">
-                                                        <div class="review-content">
-                                                            <h4 class="title">Tella, A. and A.-L. Balogun</h4>
-                                                            <div class="review-stars-rated" title="5 out of 5 stars">
-                                                                <div class="review-stars filled"></div>
-                                                            </div>
-                                                            <h5 class="review-title">Ensemble fuzzy MCDM for flood susceptibility</h5>
-                                                            <div class="review-text">
-                                                                This paper presents a novel approach for assessing flood susceptibility in Ibadan, Nigeria using ensemble fuzzy MCDM.
-                                                                <a href="https://doi.org/10.1007/s11069-020-04272-6">Read more</a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-                                                
+                                            <ul class="course-reviews-list" id="res">
+                                                <p>Loading......</p>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
-                                <div id="reviews" class="tab-pane fade">
+                                <div id="book" class="tab-pane fade">
                                     <div class="course-reviews">
-                                        <div class="course-rating">
-                                            <h3 class="title">Reviews</h3>
-                                            <div class="course-rating-content">
-                                                <div class="average-rating">
-                                                    <p class="rating-title secondary-color">Average Rating</p>
-                                                    <div class="rating-box">
-                                                        <div class="average-value primary-color">
-                                                            4.50
-                                                        </div>
-                                                        <div class="review-star">
-                                                            <div class="tm-star-rating">
-                                                                <span class="fas fa-star"></span>
-                                                                <span class="fas fa-star"></span>
-                                                                <span class="fas fa-star"></span>
-                                                                <span class="fas fa-star"></span>
-                                                                <span class="fas fa-star-half-alt"></span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="review-amount">
-                                                            (2 ratings)
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="detailed-rating">
-                                                    <p class="rating-title secondary-color">Detailed Rating</p>
-                                                    <div class="rating-box">
-                                                        <div class="rating-rated-item">
-                                                            <div class="rating-point">
-                                                                <div class="tm-star-rating">
-                                                                    <span class="fas fa-star"></span>
-                                                                    <span class="fas fa-star"></span>
-                                                                    <span class="fas fa-star"></span>
-                                                                    <span class="fas fa-star"></span>
-                                                                    <span class="fas fa-star"></span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="rating-progress">
-                                                                <div class="single-progress-bar">
-                                                                    <div class="progress">
-                                                                        <div class="progress-bar" role="progressbar"
-                                                                            style="width: 50%" aria-valuenow="50"
-                                                                            aria-valuemin="0" aria-valuemax="100"></div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="rating-count">1</div>
-                                                        </div>
-
-                                                        <div class="rating-rated-item">
-                                                            <div class="rating-point">
-                                                                <div class="tm-star-rating">
-                                                                    <span class="fas fa-star"></span>
-                                                                    <span class="fas fa-star"></span>
-                                                                    <span class="fas fa-star"></span>
-                                                                    <span class="fas fa-star"></span>
-                                                                    <span class="fas fa-star"></span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="rating-progress">
-                                                                <div class="single-progress-bar">
-                                                                    <div class="progress">
-                                                                        <div class="progress-bar" role="progressbar"
-                                                                            style="width: 50%" aria-valuenow="50"
-                                                                            aria-valuemin="0" aria-valuemax="100"></div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="rating-count">1</div>
-                                                        </div>
-
-                                                        <div class="rating-rated-item">
-                                                            <div class="rating-point">
-                                                                <div class="tm-star-rating">
-                                                                    <span class="fas fa-star"></span>
-                                                                    <span class="fas fa-star"></span>
-                                                                    <span class="fas fa-star"></span>
-                                                                    <span class="fas fa-star"></span>
-                                                                    <span class="fas fa-star"></span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="rating-progress">
-                                                                <div class="single-progress-bar">
-                                                                    <div class="progress">
-                                                                        <div class="progress-bar" role="progressbar"
-                                                                            style="width: 0%" aria-valuenow="0"
-                                                                            aria-valuemin="0" aria-valuemax="100"></div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="rating-count">0</div>
-                                                        </div>
-
-                                                        <div class="rating-rated-item">
-                                                            <div class="rating-point">
-                                                                <div class="tm-star-rating">
-                                                                    <span class="fas fa-star"></span>
-                                                                    <span class="fas fa-star"></span>
-                                                                    <span class="fas fa-star"></span>
-                                                                    <span class="fas fa-star"></span>
-                                                                    <span class="fas fa-star"></span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="rating-progress">
-                                                                <div class="single-progress-bar">
-                                                                    <div class="progress">
-                                                                        <div class="progress-bar" role="progressbar"
-                                                                            style="width: 0%" aria-valuenow="0"
-                                                                            aria-valuemin="0" aria-valuemax="100"></div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="rating-count">0</div>
-                                                        </div>
-
-                                                        <div class="rating-rated-item">
-                                                            <div class="rating-point">
-                                                                <div class="tm-star-rating">
-                                                                    <span class="fas fa-star"></span>
-                                                                    <span class="fas fa-star"></span>
-                                                                    <span class="fas fa-star"></span>
-                                                                    <span class="fas fa-star"></span>
-                                                                    <span class="fas fa-star"></span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="rating-progress">
-                                                                <div class="single-progress-bar">
-                                                                    <div class="progress">
-                                                                        <div class="progress-bar" role="progressbar"
-                                                                            style="width: 0%" aria-valuenow="0"
-                                                                            aria-valuemin="0" aria-valuemax="100"></div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="rating-count">0</div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
                                         <div class="course-reviews-area">
-                                            <ul class="course-reviews-list">
-                                                <li class="review">
-                                                    <div class="review-container">
-                                                        <div class="review-author">
-                                                            <img src="assets/images/review-author/author1.jpeg"
-                                                                alt="author">
-                                                        </div>
-                                                        <div class="review-content">
-                                                            <h4 class="title">ednawatson</h4>
-                                                            <div class="review-stars-rated" title="5 out of 5 stars">
-                                                                <div class="review-stars empty"></div>
-                                                            </div>
-                                                            <h5 class="review-title">Cover all my needs </h5>
-                                                            <div class="review-text">
-                                                                The course identify things we want to change and then
-                                                                figure out the things that need to be done to create the
-                                                                desired outcome. The course helped me in clearly define
-                                                                problems and generate a wider variety of quality
-                                                                solutions. Support more structures analysis of options
-                                                                leading to better decisions.
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
-
-                                                <li class="review">
-                                                    <div class="review-container">
-                                                        <div class="review-author">
-                                                            <img src="assets/images/review-author/author2.jpeg"
-                                                                alt="author">
-                                                        </div>
-                                                        <div class="review-content">
-                                                            <h4 class="title">Owen Christ</h4>
-                                                            <div class="review-stars-rated" title="5 out of 5 stars">
-                                                                <div class="review-stars empty"></div>
-                                                            </div>
-                                                            <h5 class="review-title">Engaging & Fun</h5>
-                                                            <div class="review-text">
-                                                                This is the third course I attend from you, and I
-                                                                absolutely loved all of them. Especially this one on
-                                                                leadership. Your method of explaining the concepts, fun,
-                                                                engaging and with real-world examples, is excellent.
-                                                                This course will help me a lot in my job, my career, and
-                                                                life in general, and I thank you for that. Thank you for
-                                                                improving the lives of many people with engaging and
-                                                                in-depth courses.
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </li>
+                                            <ul class="course-reviews-list" id="bok">
+                                                <p>Loading......</p>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="papers" class="tab-pane fade">
+                                    <div class="course-reviews">
+                                        <div class="course-reviews-area">
+                                            <ul class="course-reviews-list" id="conf">
+                                                <p>Loading......</p>
                                             </ul>
                                         </div>
                                     </div>
@@ -429,149 +140,30 @@
                             </div>
 
                             <div class="lp-course-buttons">
-                                <a class="btn btn-primary btn-hover-secondary" href="JavaScript:Void(0);">Google
+                                <a class="btn btn-primary btn-hover-secondary" target="_blank"
+                                    href="https://scholar.google.com/citations?user=VNYbr6cAAAAJ&hl=en">Google
                                     Scholar</a>
-                                <a class="btn btn-primary btn-hover-secondary" href="JavaScript:Void(0);">Linkedin</a>
+                                <a class="btn btn-primary btn-hover-secondary" target="_blank"
+                                    href="https://ng.linkedin.com/in/abdulwaheedtella">Linkedin</a>
                             </div>
                         </div>
                         <!-- Course Details Wrapper End -->
                     </div>
-                    
+
 
                 </div>
             </div>
         </div>
         <!-- Course Details Section End -->
 
-
-
-        <div class="footer-section section">
-            <div class="container">
-
-                <!-- Footer Top Widgets Start -->
-                <div class="row">
-
-                    <!-- Footer Widget Start -->
-                    <div class="col-xl-6 col-md-5 col-12 max-mb-50">
-                        <div class="footer-widget">
-                            <h4 class="footer-widget-title">Contact Me</h4>
-                            <div class="footer-widget-content">
-                                <div class="content">
-                                    <li>Experience <span>:</span> <strong>5+ years</strong></li>
-                                    <li>Freelance <span>:</span> <strong>Available</strong></li>
-                                    <li>Skype <span>:</span> <strong>tellaabdulwaheed01_1</strong></li>
-                                    <li>Language <span>:</span> <strong>English</strong></li>
-                                    <li>Email: <span><a
-                                                href="mailto:abdulwaheedtella@gmail.com">abdulwaheedtella@gmail.com
-                                            </a></span></li>
-                                </div>
-                                <div class="footer-social-inline">
-                                    <!-- <a href="#"><i class="fab fa-facebook-square"></i></a> -->
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <!-- <a href="#"><i class="fab fa-instagram"></i></a> -->
-                                    <a href="https://ng.linkedin.com/in/abdulwaheedtella"><i
-                                            class="fab fa-linkedin"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Footer Widget End -->
-
-                    <!-- Footer Widget Start -->
-                    <div class="col-xl-3 col-md-4 col-sm-7 col-12 max-mb-50">
-                        <div class="footer-widget">
-                            <h4 class="footer-widget-title">Explore</h4>
-                            <div class="footer-widget-content">
-                                <ul class="column-2">
-                                    <li><a href="#">Start here</a></li>
-                                    <li><a href="#">Success story</a></li>
-                                    <li><a href="#">Blog</a></li>
-                                    <li><a href="#">Courses</a></li>
-                                    <li><a href="#">About us</a></li>
-                                    <li><a href="#">Contact us</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Footer Widget End -->
-
-                    <!-- Footer Widget Start -->
-                    <div class="col-xl-3 col-md-3 col-sm-5 col-12 max-mb-50">
-                        <div class="footer-widget">
-                            <h4 class="footer-widget-title">Information</h4>
-                            <div class="footer-widget-content">
-                                <ul>
-                                    <li><a href="#">Membership</a></li>
-                                    <li><a href="#">Purchase guide</a></li>
-                                    <li><a href="#">Privacy policy</a></li>
-                                    <li><a href="#">Terms of service</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Footer Widget End -->
-
-                </div>
-                <!-- Footer Top Widgets End -->
-
-                <!-- Footer Copyright Start 
-        <div class="row max-mt-20">
-            <div class="col">
-                <p class="copyright">� 2023 Maxcoach. <a href="https://hasthemes.com/">All Rights Reserved</a>
-                </p>
-            </div>
-        </div> Footer Copyright End -->
-
-            </div>
-        </div>
-
-        <!-- Scroll Top Start -->
-        <a href="#" class="scroll-top" id="scroll-top">
-            <i class="arrow-top fal fa-long-arrow-up"></i>
-            <i class="arrow-bottom fal fa-long-arrow-up"></i>
-        </a>
-        <!-- Scroll Top End -->
     </div>
 
-    <div id="site-main-mobile-menu" class="site-main-mobile-menu">
-        <div class="site-main-mobile-menu-inner">
-            <div class="mobile-menu-header">
-                <div class="mobile-menu-logo">
-                    <a href="index.html"><img src="https://abdulwaheedtella.com/images/logo-dark.png" alt=""></a>
-                </div>
-                <div class="mobile-menu-close">
-                    <button class="toggle">
-                        <i class="icon-top"></i>
-                        <i class="icon-bottom"></i>
-                    </button>
-                </div>
-            </div>
-            <div class="mobile-menu-content">
-                <nav class="site-mobile-menu">
-                    <ul>
-                        <li class=" position-static">
-                            <a href="#"><span class="menu-text">Home</span></a>
-                        </li>
-                        <li class=" position-static">
-                            <a href="#"><span class="menu-text">About Me</span></a>
-                        </li>
-                        <li class=" position-static">
-                            <a href="#"><span class="menu-text">Publications</span></a>
-                        </li>
-                        <li class=" position-static">
-                            <a href="#"><span class="menu-text">Services</span></a>
-                        </li>
-                        <li class=" position-static">
-                            <a href="#"><span class="menu-text">Blog</span></a>
-                        </li>
-                        <li class=" position-static">
-                            <a href="#"><span class="menu-text">Contact</span></a>
-                        </li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
+    <!-- Loader element -->
+    <div id="loader" class="loader-container">
+        <div class="mini-loader"></div>
     </div>
+
+
 
     <!-- JS
 ============================================ -->
@@ -612,67 +204,81 @@
     <!-- Main Activation JS -->
     <script src="assets/js/main.js"></script>
     <script>
+        const apiKey = 'AIzaSyDYPsGTQS5KnpWWzJLpU2ETxs4KN9UPYeI';
+        const blogId = '3642558814134041603';
+        function fetchPostContent(apiKey, blogId, postId, targetDivId) {
+            const url = `https://www.googleapis.com/blogger/v3/blogs/${blogId}/pages/${postId}?key=${apiKey}`;
+
+            fetch(url)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok ' + response.statusText);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const postContent = data.content;
+                    document.getElementById(targetDivId).innerHTML = postContent;
+                })
+                .catch(error => {
+                    console.error('There was a problem with the fetch operation:', error);
+                });
+        }
+
+        // Fetch content for different posts and display in different divs
+        fetchPostContent(apiKey, blogId, '751064583582146706', 'res'); // Post 1
+        fetchPostContent(apiKey, blogId, '3625544780777822262', 'bok'); // Post 2
+        fetchPostContent(apiKey, blogId, '2086606272549556382', 'conf'); // Post 3
         const statusDiv = document.getElementById('statuss');
-        const targetDiv = document.getElementById('googleScholar');
-        document.addEventListener('DOMContentLoaded', async function () {
-            // const fetchButton = document.getElementById('fetchButton');
+const targetDiv = document.getElementById('googleScholar');
 
-            console.log('Loaded');
-            await loadStats();
-        }
-        );
+document.addEventListener('DOMContentLoaded', function () {
+    console.log('Loaded DOM');
+    loadStats();
+});
 
-        async function loadStats() {
-            // fetchButton.disabled = true;
-            statusDiv.innerHTML = '<span class="loading"></span> Fetching data from Google Scholar...';
-            statusDiv.className = '';
+function loadStats() {
+    console.log('Google Scholar about to start DOM');
+    statusDiv.innerHTML = '<span class="loading"></span> Fetching data from Google Scholar...';
+    statusDiv.className = '';
 
-            try {
-                // Using PHP proxy that forces English language
-                const proxyUrl = 'https://aaiscbt.alwaysdata.net/proxy.php?url=';
-                const scholarUrl = `${proxyUrl}https://scholar.google.com/citations?user=VNYbr6cAAAAJ&hl=en`;
+    // Using PHP proxy that forces English language
+    const proxyUrl = 'https://aaiscbt.alwaysdata.net/proxy.php?url=';
+    const scholarUrl = `${proxyUrl}https://scholar.google.com/citations?user=VNYbr6cAAAAJ&hl=en`;
 
-                const response = await fetch(scholarUrl);
-
-
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-
-                const html = await response.text();
-
-                // Create a DOM parser to extract the content
-                const parser = new DOMParser();
-                const doc = parser.parseFromString(html, 'text/html');
-
-                // Find the citation metrics div in the fetched content
-                const citationDiv = doc.getElementById('gsc_rsb_cit');
-
-                if (citationDiv) {
-                    targetDiv.innerHTML = '';
-                    targetDiv.appendChild(citationDiv.cloneNode(true));
-                    statusDiv.innerHTML = '<span class="success">Successfully fetched and displayed Google Scholar citation metrics.</span>';
-                } else {
-                    throw new Error('Could not find citation metrics div (#gsc_rsb_cit) on the page');
-                }
-
-            } catch (error) {
-                console.error('Error:', error);
-                statusDiv.innerHTML = `<span class="error">Error: ${error.message}</span>`;
-                if (error.message.includes('CORS') || error.message.includes('Failed to fetch')) {
-                    statusDiv.innerHTML += `
-                        <p class="error">
-                            <strong>Fetch Error:</strong> Failed to load Google Scholar data.<br>
-                            Check that the PHP proxy is working and hosted on a server.
-                        </p>
-                        <p class="error">
-                            Ensure you're accessing this page through a web server (not file://).
-                        </p>`;
-                }
-            } finally {
-                // fetchButton.disabled = false;
+    fetch(scholarUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
             }
-        }
+            return response.text();
+        })
+        .then(html => {
+            // Create a DOM parser to extract the content
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+
+            // Find the citation metrics div in the fetched content
+            const citationDiv = doc.getElementById('gsc_rsb_cit');
+
+            if (citationDiv) {
+                targetDiv.innerHTML = '';
+                targetDiv.appendChild(citationDiv.cloneNode(true));
+            } else {
+                throw new Error('Could not find citation metrics div (#gsc_rsb_cit) on the page');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        })
+        .finally(() => {
+            // Any cleanup or final actions can be done here
+            // fetchButton.disabled = false; // Uncomment if you have a fetch button
+        });
+
+    console.log('Google Scholar Done DOM');
+}
+
 
     </script>
 
