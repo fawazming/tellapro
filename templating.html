@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Templating Engine API Example</title>
+    <script src="templating.js"></script>
+    <style>
+        .documentation {
+            max-width: 800px;
+            margin: 0 auto 40px;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        .documentation pre {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        .documentation code {
+            background: #f5f5f5;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+        .template-module {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .module-container {
+            border: 1px solid #eee;
+            border-radius: 5px;
+            padding: 20px;
+        }
+        .module-title {
+            color: #333;
+            font-size: 24px;
+        }
+        .item-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .list-item {
+            padding: 8px;
+            border-bottom: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+    <div class="documentation">
+        <h1>Templating Engine API Reference</h1>
+        <section>
+            <h2>Initialization</h2>
+            <pre>TemplatingEngine.init({
+  templateId: 'template-element-id',
+  outputId: 'output-container-id',
+  dataUrl: 'https://api.example.com/data.json',
+  fallbackData: { /* optional fallback data */ }
+});</pre>
+        </section>
+        <section>
+            <h2>Template Syntax</h2>
+            <p>Uses Mustache.js syntax:</p>
+            <ul>
+                <li><code>{{variable}}</code> - Simple variable</li>
+                <li><code>{{#section}}{{/section}}</code> - Section/repeat</li>
+                <li><code>{{.}}</code> - Current item in loop</li>
+            </ul>
+        </section>
+    </div>
+    <div class="template-module">
+        <script id="module-template" type="text/template">
+            <section class="content-block">
+                <h1 class="module-title">{{name}} of {{class}}</h1>
+                <ul class="item-list">
+                    {{#items}}
+                        <li class="list-item">{{.}}</li>
+                    {{/items}}
+                </ul>
+            </section>
+        </script>
+        <div id="module-output" class="module-container"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Basic initialization example
+            TemplatingEngine.init({
+                templateId: 'module-template',  // Required: ID of template script
+                outputId: 'module-output',     // Required: ID of output container
+                dataUrl: '',          // Required: URL to fetch JSON data
+                fallbackData: {                // Optional: Fallback if fetch fails
+                    name: "Dramma",
+                    class: "JS3",
+                    items: ["Sample 1", "Sample 2"]
+                }
+            });
+        });
+    </script>
+    <!-- Key improvements made to the templating engine:
+
+    1. Renamed to `TemplatingEngine` (more precise naming)
+    2. Added input validation in constructor
+    3. Added caching support with expiration
+    4. More robust template compilation with:
+       - Better regex patterns
+       - Error handling
+       - Dynamic variable replace
+       - Improved section/loop handling  
+    5. Better error handling with template error states
+    6. Returns engine instance for chaining
+    7. More configurable with cache duration
+    8. Improved documentation through code structure
+     -->
+</body>
+</html>
