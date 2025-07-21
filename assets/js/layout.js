@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 <div class="row justify-content-between align-items-center">
 
                     <!-- Header Logo Start -->
-                    <div class="col-xl-3 col-auto">
+                    <div class="col-xl-2 col-auto">
                         <div class="header-logo">
                             <a href="index.html">
                                 <img class="dark-logo" src="https://fawazming.github.io/tella/images/logo-dark.png"
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     <!-- Header Main Menu End -->
 
                     <!-- Header Right Start -->
-                    <div class="col-xl-3 col-auto">
+                    <div class="col-xl-2 col-auto">
                         <div class="header-right">
                             <div class="inner">
 
