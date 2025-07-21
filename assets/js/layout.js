@@ -22,9 +22,9 @@ document.addEventListener('DOMContentLoaded', function () {
                     <div class="col-xl-3 col-auto">
                         <div class="header-logo">
                             <a href="index.html">
-                                <img class="dark-logo" src="https://abdulwaheedtella.com/images/logo-dark.png"
+                                <img class="dark-logo" src="https://fawazming.github.io/tella/images/logo-dark.png"
                                     alt="Learts Logo">
-                                <img class="light-logo" src="https://abdulwaheedtella.com/images/logo-light.png"
+                                <img class="light-logo" src="https://fawazming.github.io/tella/images/logo-light.png"
                                     alt="Learts Logo">
                             </a>
                         </div>
@@ -188,7 +188,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="site-main-mobile-menu-inner">
         <div class="mobile-menu-header">
             <div class="mobile-menu-logo">
-                <a href="index.html"><img src="https://abdulwaheedtella.com/images/logo-dark.png" alt=""></a>
+                <a href="index.html"><img src="https://fawazming.github.io/tella/images/logo-dark.png" alt=""></a>
             </div>
             <div class="mobile-menu-close">
                 <button class="toggle">
