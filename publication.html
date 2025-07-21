@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Abdulwaheed Tella Research -GEO AI Researcher | Data Scientist | GeoAI Enthusiast </title>
+    <title>Abdulwaheed Tella Publications -GEO AI Researcher | Data Scientist | GeoAI Enthusiast </title>
     <meta name="robots" content="noindex, follow">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -38,17 +38,17 @@
     <div id="content-container">
 
         <!-- Page Title Section Start -->
-        <div class="page-title-section section" style="padding-bottom: 2px;">
+        <div class="page-title-section section">
             <div class="page-title">
                 <div class="container">
-                    <h1 class="title">Research</h1>
+                    <h1 class="title">Publications</h1>
                 </div>
             </div>
             <div class="page-breadcrumb">
                 <div class="container">
                     <ul class="breadcrumb">
                         <li><a href="index.html">Home</a></li>
-                        <li class="current">Research</li>
+                        <li class="current">Publications</li>
                     </ul>
                 </div>
             </div>
@@ -59,14 +59,72 @@
         <div class="section">
             <div class="container">
                 <div class="row max-mb-n50">
-                    <div class="offset-lg-2 col-lg-8 col-12 max-mb-50">
+                    <div class="col-lg-4 mb-30">
+                        <div class="course-rating">
+                            <h3 class="title">Google Stats</h3>
+                            <style>
+                                .courser-rating {
+                                    width: 100%;
+                                }
+
+                                .courser-rating .title {
+                                    text-align: center;
+                                }
+
+                                #gsc_rsb_st {
+                                    width: 100%;
+                                }
+
+                                table {
+                                    border-collapse: collapse;
+                                    border-width: 0;
+                                    empty-cells: show;
+                                }
+
+                                #googleScholar {
+                                    min-width: 80%;
+                                }
+                            </style>
+                            <div id="statuss" style="display: none;"></div>
+                            <div class="course-rating-contt" id="googleScholar">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-12 max-mb-50">
                         <!-- Course Details Wrapper Start -->
                         <div class="course-details-wrapper">
+                            <div class="course-nav-tab">
+                                <ul class="nav justify-content-center">
+                                    <li><a class="active" data-bs-toggle="tab" href="#research">Publications by Research
+                                            Theme</a></li>
+                                    <li><a data-bs-toggle="tab" href="#book">Book Chapters</a></li>
+                                    <li><a data-bs-toggle="tab" href="#papers">Conference & Presentations</a></li>
+                                </ul>
+                            </div>
                             <div class="tab-content">
                                 <div id="research" class="tab-pane fade show active">
                                     <div class="course-reviews">
                                         <div class="course-reviews-area">
                                             <ul class="course-reviews-list" id="res">
+                                                <p>Loading......</p>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="book" class="tab-pane fade">
+                                    <div class="course-reviews">
+                                        <div class="course-reviews-area">
+                                            <ul class="course-reviews-list" id="bok">
+                                                <p>Loading......</p>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="papers" class="tab-pane fade">
+                                    <div class="course-reviews">
+                                        <div class="course-reviews-area">
+                                            <ul class="course-reviews-list" id="conf">
                                                 <p>Loading......</p>
                                             </ul>
                                         </div>
@@ -161,7 +219,9 @@
         }
 
         // Fetch content for different posts and display in different divs
-        fetchPostContent(apiKey, blogId, '6871602345053550767', 'res'); //4567274803028163935
+        fetchPostContent(apiKey, blogId, '751064583582146706', 'res'); // Post 1
+        fetchPostContent(apiKey, blogId, '3625544780777822262', 'bok'); // Post 2
+        fetchPostContent(apiKey, blogId, '2086606272549556382', 'conf'); // Post 3
         const statusDiv = document.getElementById('statuss');
 
         document.addEventListener('DOMContentLoaded', function () {
